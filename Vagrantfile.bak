@@ -1,0 +1,15 @@
+Vagrant.configure("2") do |config|
+
+    config.timezone.value = "Europe/Madrid"
+
+    config.vm.define "Jenkins" do |master|
+      master.vm.box = "bento/ubuntu-20.04"
+      master.vm.hostname = "Jenkins"
+      master.disksize.size = '20GB'
+      master.vm.provider "virtualbox" do |vb|
+        vb.name = "Jenkins"
+	      vb.memory = 4092
+        vb.cpus = 4
+      end
+    end
+end

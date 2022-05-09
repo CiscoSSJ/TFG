@@ -1,0 +1,37 @@
+services:
+  db:
+    image: mysql:latest
+    volumes:
+      - db_data:/var/lib/mysql
+    restart: always
+    networks:
+     - backend
+    environment:
+      MYSQL_ROOT_PASSWORD: wordpress
+      MYSQL_DATABASE: wordpress
+      MYSQL_USER: wordpress
+      MYSQL_PASSWORD: wordpress
+    
+  wordpress:
+    image: wordpress:latest
+    volumes:
+      - wordpress_data:/var/www/html
+    ports:
+      - "8080:80"
+    restart: always
+    networks:
+      - backend
+    environment:
+      WORDPRESS_DB_HOST: db
+      WORDPRESS_DB_USER: wordpress
+      WORDPRESS_DB_PASSWORD: wordpress
+      WORDPRESS_DB_NAME: wordpress
+volumes:
+  db_data: {}
+  wordpress_data: {}
+
+networks:
+  backend: {}
+# docker-compose up -d
+# docker ps -a --> Compruebas que ambos contenedores funcionen
+# Navegador --> localhost:8080
