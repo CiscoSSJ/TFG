@@ -34,3 +34,5 @@ ls
 ls
 sudo docker images rm prune
 sudo docker images prune
+sudo docker images ls
+sudo reboot

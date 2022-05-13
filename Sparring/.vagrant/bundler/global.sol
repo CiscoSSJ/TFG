@@ -1,1 +1,0 @@
-{"dependencies":[["vagrant-disksize",["= 0.1.3"]],["vagrant-timezone",["= 1.3.0"]]],"checksum":"b03c14e5e17986774b4d9e1ff4c829bd7596021ddfe440be7581cd5029d68612","vagrant_version":"2.2.18"}
