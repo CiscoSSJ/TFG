@@ -14,10 +14,7 @@
         name: docker-py
         state: present
     - name: Inicia docker
-      service:
-        name: docker
-        state: started
-        enabled: yes
+      ansible.builtin.shell: sudo apt update && sudo apt install docker.io && service docker start
     - name: Inicia el contenedor
       docker_container:
         name: ciscossj
