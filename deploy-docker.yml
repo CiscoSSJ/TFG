@@ -15,8 +15,9 @@
         state: present
     - name: Inicia docker
       ansible.builtin.shell: sudo apt update && sudo apt install docker.io && service docker start
-    - name: Inicia el contenedor
+    - name: Para el contenedor
       ansible.builtin.shell: sudo docker stop ciscossj && sudo docker rm ciscossj
+    - name: Inicia el contenedor
       docker_container:
         name: ciscossj
         image: "ciscossj/ciscoapp:{{DOCKER_TAG}}"
