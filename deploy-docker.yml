@@ -22,3 +22,10 @@
         state: stopped
         published_ports:
           - 0.0.0.0:8080:8080
+    - name: Inicia el contenedor
+      docker_container:
+        name: ciscossj
+        image: "ciscossj/ciscoapp:{{DOCKER_TAG}}"
+        state: started
+        published_ports:
+          - 0.0.0.0:8080:8080
