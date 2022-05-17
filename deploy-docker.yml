@@ -15,14 +15,8 @@
         state: present
     - name: Inicia docker
       ansible.builtin.shell: sudo apt update && sudo apt install docker.io && service docker start
-    - name: Detiene el contenedor (si existe)
-      docker_container:
-        name: ciscossj
-        image: "ciscossj/ciscoapp:{{DOCKER_TAG}}"
-        state: stopped
-        published_ports:
-          - 0.0.0.0:8080:8080
     - name: Inicia el contenedor
+      ansible.builtin.shell: sudo docker stop ciscossj && sudo docker rm ciscossj
       docker_container:
         name: ciscossj
         image: "ciscossj/ciscoapp:{{DOCKER_TAG}}"
