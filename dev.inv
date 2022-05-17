@@ -1,2 +1,2 @@
 [dev]
-192.168.1.105 ansible_user=dev ansible_password=dev ansible_sudo_pass=dev
+172.28.159.52 ansible_user=usuario ansible_password=usuario ansible_sudo_pass=usuario
