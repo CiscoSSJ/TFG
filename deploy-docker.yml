@@ -9,15 +9,15 @@
       apt:
         name: docker
         state: present
+    - name: Instalar docker-py 
+      pip:
+        name: docker-py
+        state: present
     - name: Inicia docker
       service:
         name: docker
         state: started
         enabled: yes
-    - name: Instalar docker-py 
-      pip:
-        name: docker-py
-        state: present
     - name: Inicia el contenedor
       docker_container:
         name: ciscossj
